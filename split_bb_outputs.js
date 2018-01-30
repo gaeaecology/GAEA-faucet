@@ -1,12 +1,12 @@
 /*jslint node: true */
 "use strict";
-var _ = require('byteballcore/node_modules/lodash');
-var headlessWallet = require('headless-byteball');
-var constants = require('byteballcore/constants.js');
-var eventBus = require('byteballcore/event_bus.js');
-var objectHash = require('byteballcore/object_hash.js');
-var db = require('byteballcore/db.js');
-var storage = require('byteballcore/storage.js');
+var _ = require('GAEAcore/node_modules/lodash');
+var headlessWallet = require('headless-GAEA');
+var constants = require('GAEAcore/constants.js');
+var eventBus = require('GAEAcore/event_bus.js');
+var objectHash = require('GAEAcore/object_hash.js');
+var db = require('GAEAcore/db.js');
+var storage = require('GAEAcore/storage.js');
 
 const asset = constants.BLACKBYTES_ASSET;
 const objAsset = {is_private: true, fixed_denominations: true};
@@ -28,7 +28,7 @@ function readAddresses(handleAddresses){
 	);
 }
 
-var indivisibleAsset = require('byteballcore/indivisible_asset.js');
+var indivisibleAsset = require('GAEAcore/indivisible_asset.js');
 indivisibleAsset.updateIndivisibleOutputsThatWereReceivedUnstable(db, function(){});
 
 function onError(err){
@@ -36,8 +36,8 @@ function onError(err){
 }
 
 function splitOutputOnAddresses(arrAddresses){
-	var composer = require('byteballcore/composer.js');
-	var network = require('byteballcore/network.js');
+	var composer = require('GAEAcore/composer.js');
+	var network = require('GAEAcore/network.js');
 
 	
 	function pickCoins(conn, last_ball_mci, bMultiAuthored, onDone){

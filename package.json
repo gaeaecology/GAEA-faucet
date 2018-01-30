@@ -1,27 +1,27 @@
 {
-  "name": "byteball-faucet",
-  "description": "Byteball faucet",
-  "author": "Byteball",
+  "name": "GAEA-faucet",
+  "description": "GAEA faucet",
+  "author": "GAEA",
   "version": "0.1.1",
   "main": "start.js",
   "keywords": [
     "faucet",
-    "byteball"
+    "GAEA"
   ],
   "license": "MIT",
   "repository": {
-    "url": "git://github.com/byteball/byteball-faucet.git",
+    "url": "git://github.com/GAEA/GAEA-faucet.git",
     "type": "git"
   },
   "bugs": {
-    "url": "https://github.com/byteball/byteball-faucet/issues"
+    "url": "https://github.com/GAEA/GAEA-faucet/issues"
   },
   "browser": {
     "request": "browser-request",
     "secp256k1": "secp256k1/js"
   },
   "dependencies": {
-    "byteballcore": "^0.2.1",
-    "headless-byteball": "git+https://github.com/byteball/headless-byteball.git"
+    "GAEAcore": "^0.2.1",
+    "headless-GAEA": "git+https://github.com/GAEA/headless-GAEA.git"
   }
 }

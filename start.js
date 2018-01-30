@@ -1,13 +1,13 @@
 /*jslint node: true */
 "use strict";
-var constants = require('byteballcore/constants.js');
-var conf = require('byteballcore/conf.js');
-var db = require('byteballcore/db.js');
-var eventBus = require('byteballcore/event_bus.js');
-var mail = require('byteballcore/mail.js');
-var headlessWallet = require('headless-byteball');
-var desktopApp = require('byteballcore/desktop_app.js');
-var ValidationUtils = require("byteballcore/validation_utils.js");
+var constants = require('GAEAcore/constants.js');
+var conf = require('GAEAcore/conf.js');
+var db = require('GAEAcore/db.js');
+var eventBus = require('GAEAcore/event_bus.js');
+var mail = require('GAEAcore/mail.js');
+var headlessWallet = require('headless-GAEA');
+var desktopApp = require('GAEAcore/desktop_app.js');
+var ValidationUtils = require("GAEAcore/validation_utils.js");
 
 const GREETING_TIMEOUT = 300*1000;
 const SESSION_TIMEOUT = 600*1000;
@@ -18,7 +18,7 @@ function notifyAdmin(subject, body){
 		to: conf.admin_email,
 		from: conf.from_email,
 		subject: subject,
-		body: body
+	 	body: body
 	});
 }
 
@@ -47,13 +47,13 @@ function purgeOldSessions(){
 setInterval(purgeOldSessions, SESSION_TIMEOUT);
 
 function sendMessageToDevice(device_address, text){
-	var device = require('byteballcore/device.js');
+	var device = require('GAEAcore/device.js');
 	device.sendMessageToDevice(device_address, 'text', text);
 //	assocSessions[device_address].ts = Date.now();
 }
 
 function sendGreeting(device_address){
-	sendMessageToDevice(device_address, 'To receive free bytes, let me know your Byteball address (use "Insert My Address" button)');
+	sendMessageToDevice(device_address, 'To receive free bytes, let me know your GAEA address (use "Insert My Address" button)');
 	assocSessions[device_address].greeting_ts = Date.now();
 }
 

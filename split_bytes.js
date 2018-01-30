@@ -1,9 +1,9 @@
 /*jslint node: true */
 "use strict";
-var conf = require('byteballcore/conf.js');
-var db = require('byteballcore/db.js');
-var eventBus = require('byteballcore/event_bus.js');
-var headlessWallet = require('headless-byteball');
+var conf = require('GAEAcore/conf.js');
+var db = require('GAEAcore/db.js');
+var eventBus = require('GAEAcore/event_bus.js');
+var headlessWallet = require('headless-GAEA');
 
 
 headlessWallet.setupChatEventHandlers();
@@ -13,9 +13,9 @@ function work(){
 	function onError(err){
 		throw err;
 	}
-	var network = require('byteballcore/network.js');
-	var walletGeneral = require('byteballcore/wallet_general.js');
-	var composer = require('byteballcore/composer.js');
+	var network = require('GAEAcore/network.js');
+	var walletGeneral = require('GAEAcore/wallet_general.js');
+	var composer = require('GAEAcore/composer.js');
 	db.query(
 		"SELECT amount, address FROM my_addresses JOIN outputs USING(address) WHERE asset IS NULL AND is_spent=0 ORDER BY amount DESC LIMIT 1",
 		function(rows){
